@@ -61,8 +61,6 @@ function nyanGenerator() {
   let root = document.documentElement;
   root.style.setProperty('--nyanX', `${myNumX}` + "px");
   root.style.setProperty('--nyanY', `${myNumY}` + "px");
-  console.log(`${myNumX}, ${myNumY}`)
-  console.log(document.getElementById("nyanSlider").value);
   root.style.setProperty('--transitionX', `${timing * 0.0005}` + "s");
   root.style.setProperty('--transitionY', `${timing * 0.001}` + "s");
   if (timing < 61){
