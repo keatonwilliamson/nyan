@@ -1,0 +1,161 @@
+:root {
+    --nyanX: 0px;
+    --nyanY: 0px;
+    --transitionX: 0.5s;
+    --transitionY: 0.5s;
+}
+
+.mother {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.child {
+    width: 700px;
+    height: 700px;
+    border: 7px solid black;
+    background-image: url("../images/nyan-background.png");
+    position: relative;
+}
+
+.nyancat {
+    position: absolute;
+    width: 255px;
+    height: 100px;
+    right: var(--nyanX);
+    top: var(--nyanY);
+    transition: top var(--transitionY), right var(--transitionX);
+}
+
+.speednyan {
+    position: absolute;
+    width: 255px;
+    height: 100px;
+    right: var(--nyanX);
+    top: var(--nyanY);
+    filter: drop-shadow(0 0 30px white) brightness(1.75);
+    animation: nyangrow .1s 20 alternate;
+}
+
+@keyframes nyangrow {
+    0% {
+        filter: brightness(2);
+        width:127.5px;
+        height:50px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        filter: brightness(0); 
+        width:255px;
+        height: 100px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    } 
+}
+
+
+
+#nyanSlider {
+    width: 75%;
+}
+
+.redglow{
+    
+    animation: redglow 0.5s infinite alternate;
+    animation-delay: 2s;
+    animation-timing-function: ease-in;
+     
+}
+
+@keyframes redglow {
+    0% {
+        filter: drop-shadow(0 0 30px red);
+    }
+  
+    100% { 
+        filter: drop-shadow(0 0 1px red);
+    }
+  }
+
+.clearbox {
+    width: 700px;
+    height: 700px;
+    position: relative;
+    background-color: red;
+    opacity: 0;
+}
+
+  .redbox{
+    width: 700px;
+    height: 700px;
+    position: relative;
+    backdrop-filter: brightness(30%);
+    animation: redbox 0.5s infinite alternate;
+    animation-delay: 2s;
+    animation-timing-function: ease-in;
+     
+}
+
+@keyframes redbox {
+    0% {
+        opacity: 0.6;
+        background-color: red;
+        backdrop-filter: brightness(90%);
+    }
+  
+    100% {
+        
+        opacity: 0.2;
+        background-color: red;
+        backdrop-filter: brightness(90%);
+    }
+  }
+
+  .normalHeader {
+      color: black;
+  }
+
+  .invertedHeader {
+      animation: turnwhite 1s infinite linear;
+      animation-delay: 2s;
+  }
+
+  @keyframes turnwhite {
+    0% {
+       color: white;
+       
+    }
+  
+    100% {
+        color: white;
+       filter: drop-shadow(0 0 5px white);
+  }
+  }
+
+
+  .normalBody {
+      background-color: white;
+  }
+
+  .invertedBody {
+      animation: turnblack 1s infinite linear;
+      animation-delay: 2s;
+  }
+
+  @keyframes turnblack {
+    0% {
+       background-color: black;
+       
+    }
+  
+    100% {
+        background-color: black;
+  }
+  }
